@@ -5,8 +5,8 @@ import scala.collection.immutable.Seq
 /**
   * Chromosome fragment.
   *
-  * @param key   A description.
-  * @param value A nucleotide sequence.
+  * @param key   Description.
+  * @param value Nucleotide sequence.
   */
 case class Fragment(key: String, value: String) {
   def suffix(index: Int) = SuffixFragment(key, value, index)
@@ -15,8 +15,8 @@ case class Fragment(key: String, value: String) {
 /**
   * Suffix of a fragment.
   *
-  * @param key   A description.
-  * @param value A nucleotide sequence.
+  * @param key   Description.
+  * @param value Nucleotide sequence.
   * @param index The starting position of the nucleotide sub-sequence.
   */
 case class SuffixFragment(key: String, value: String, index: Int) {
@@ -34,8 +34,7 @@ case class Link(left: Fragment, right: SuffixFragment)
 /**
   * Loop container for a left fold.
   *
-  * @param from  Map of unlinked source fragments.
-  * @param zero  Zero fragment.
-  * @param links Links.
+  * @param destinations Map of unlinked destination fragments.
+  * @param links        Links.
   */
-case class Loop(zero: Option[Fragment], from: Map[String, Fragment], links: Seq[Link])
+case class Loop(destinations: Map[String, Fragment], links: Seq[Link])
