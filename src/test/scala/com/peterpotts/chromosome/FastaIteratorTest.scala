@@ -7,7 +7,7 @@ import scala.io.Source
 class FastaIteratorTest extends WordSpec with Matchers {
   "A FASTA iterator" should {
     "decode FASTA format" in {
-      val lines: Iterator[String] = Source.fromURL(getClass.getResource("/small.fas")).getLines()
+      val lines = Source.fromURL(getClass.getResource("/small.fas")).getLines()
       val actual = new FastaIterator(lines)
 
       val expected = Map(
