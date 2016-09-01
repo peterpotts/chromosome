@@ -6,7 +6,7 @@ package com.peterpotts.chromosome
   */
 object Splicer extends ((String, String) => Option[Int]) {
   def apply(left: String, right: String): Option[Int] = {
-    var index = math.max(left.length, right.length) / 2 + 1
+    var index: Int = math.max(left.length, right.length) / 2 + 1
 
     if (index > right.length) {
       None
@@ -17,8 +17,8 @@ object Splicer extends ((String, String) => Option[Int]) {
   }
 
   private def mismatch(left: String, right: String, index: Int): Boolean = {
-    var leftIndex = left.length - 1
-    var rightIndex = index - 1
+    var leftIndex: Int = left.length - 1
+    var rightIndex: Int = index - 1
 
     while (leftIndex >= 0 && rightIndex >= 0 && left.charAt(leftIndex) == right.charAt(rightIndex)) {
       leftIndex -= 1
