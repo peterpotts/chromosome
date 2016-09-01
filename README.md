@@ -4,7 +4,7 @@ Chromosome fragmentation
 An algorithm to recombine the fragments of a chromosome.
 
 The application parses the FASTA formatted input into a collection of fragment objects. A fragment is composed of a
-description and a nucleotide sequence. These fragments are then zipped together using the simple zipper.
+description and a nucleotide sequence. These fragments are then zipped together using the sequential zipper.
 
 The sequential zipper is an implementation of the zipper function that takes a collection of fragments and evaluates
 the entire reconstructed chromosome represented as a string.
